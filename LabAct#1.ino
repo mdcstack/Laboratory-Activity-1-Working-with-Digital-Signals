@@ -1,41 +1,30 @@
-// C++ code
-//
-const int bulb12 = 12;
-const int bulb11 = 11;
-const int bulb10 = 10;
-const int bulb9 = 9;
-const int bulb8 = 8;
 
+int bulb_on =12;
+int bulb_off =12;
 
 void setup()
 {
-  pinMode(bulb12, OUTPUT);
-  pinMode(bulb11, OUTPUT);
-  pinMode(bulb10, OUTPUT);
-  pinMode(bulb9, OUTPUT);
-  pinMode(bulb8, OUTPUT);
+  pinMode(bulb_on, OUTPUT);
+  pinMode(bulb_off, OUTPUT);
 }
 
+ 
 void loop()
 {
-  digitalWrite(bulb12, HIGH);
-  delay(1000); // Wait for 1000 millisecond(s)
-  digitalWrite(bulb11, HIGH);
-  delay(1000); // Wait for 1000 millisecond(s)
-  digitalWrite(bulb10, HIGH);
-  delay(1000); // Wait for 1000 millisecond(s)
-  digitalWrite(bulb9, HIGH);
-  delay(1000); // Wait for 1000 millisecond(s)
-  digitalWrite(bulb8, HIGH);
-  delay(1000); // Wait for 1000 millisecond(s)
-  digitalWrite(bulb12, LOW);
-  delay(1000); // Wait for 1000 millisecond(s)
-  digitalWrite(bulb11, LOW);
-  delay(1000); // Wait for 1000 millisecond(s)
-  digitalWrite(bulb10, LOW);
-  delay(1000); // Wait for 1000 millisecond(s)
-  digitalWrite(bulb9, LOW);
-  delay(1000); // Wait for 1000 millisecond(s)
-  digitalWrite(bulb8, LOW);
-  delay(1000); // Wait for 1000 millisecond(s)  
+  if(bulb_on <13 && bulb_on >7){
+    digitalWrite(bulb_on,HIGH);
+    delay(1000);
+    bulb_on = bulb_on - 1;
+  }
+  
+  else if(bulb_off <13 &&  bulb_off >7){
+    digitalWrite(bulb_off,LOW);
+    delay(1000);
+    bulb_off = bulb_off - 1;
+  }
+  
+  else {
+  	bulb_on = 12;
+    bulb_off =12;
+  }
 }
